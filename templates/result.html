@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toilet Paper</title>
+    <style>
+   h1 {
+   text-align: center;
+}
+.menu {
+  margin: 0 auto;
+    width:250px;
+  }
+ #link{
+  width:250px;
+  }
+  #submit{
+  text-align: center;
+  }
+  #rss{
+  width:250px;
+  }
+    </style>
+</head>
+<body>
+<h1>Toilet Paper</h1>
+<div class="menu">
+<form action="/detail" method="post">
+      <select id = "link" name = "link" placeholder="link" required>
+      {% for entry in NewsFeed.entries %}
+          <option value="{{ entry.link }}">{{ entry.title }}</option>
+      {% endfor %}
+      </select>
+
+     <p id= "submit"><input type="submit"></p>
+</form>
+</div>
+</body>
+</html>
