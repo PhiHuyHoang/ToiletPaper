@@ -22,7 +22,7 @@ def detail():
     soup = BeautifulSoup(requests.get(link).content,'html.parser')
     title = soup.find(class_="title_news_detail mb10").text
     paragraphs = soup.find("article")
-    return """<h1>"""+title+"""</h1>""" + str(paragraphs)
+    return """<h1>"""+title+"""</h1>""" + str(paragraphs) + '<a href="'+link+'">Link bài viết gốc</a>'
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8000))
     print("Starting app on port %d" % port)
