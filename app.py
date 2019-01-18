@@ -3,25 +3,26 @@ import requests
 import feedparser
 from flask import Flask, render_template, request, redirect
 import os
-
+from datetime import datetime
 app = Flask(__name__)
+
+year = datetime.now().year
 
 @app.route('/', methods=['GET' , 'POST'])
 def index():
-    return render_template('index.html')
+    return render_template('index.html',year=year)
 @app.route('/result', methods=['POST'])
 def result():
     rss = request.form['rss']
     NewsFeed = feedparser.parse("https://vnexpress.net" + rss)
-    for entry in NewsFeed.entries:
-        print(entry.title, entry.link)
-    return render_template('result.html',NewsFeed = NewsFeed)
+    return render_template('result.html',NewsFeed = NewsFeed,year=year)
 @app.route('/detail', methods=['POST'])
 def detail():
     link = request.form['link']
     soup = BeautifulSoup(requests.get(link).content,'html.parser')
-    paragraphs = soup.find(class_="content_detail fck_detail width_common block_ads_connect")
-    return str(paragraphs)
+    title = soup.find(class_="title_news_detail mb10").text
+    paragraphs = soup.find("article")
+    return """<h1>"""+title+"""</h1>""" + str(paragraphs)
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8000))
     print("Starting app on port %d" % port)

@@ -3,48 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Toilet Paper</title>
-    <style>
-   h1 {
-   text-align: center;
-}
-
-.menu {
-  margin: 0 auto;
-    width:250px;
-  }
- #link{
-  width:250px;
-  }
-  #submit{
-  text-align: center;
-  }
-  #rss{
-  width:250px;
-  }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-<h1>Toilet Paper</h1>
+<h1>VnExpress Toilet Paper</h1>
 <div class="menu">
     <form action="/result" method="post">
-      <select id = "rss" name = "rss" placeholder="rss" required>
-            <option value="/rss/thoi-su.rss">Thời sự</option>
-            <option value="/rss/kinh-doanh.rss">Kinh doanh</option>
-            <option value="/rss/giai-tri.rss">Giải trí</option>
-            <option value="/rss/the-thao.rss">Thể thao</option>
-            <option value="/rss/phap-luat.rss">Pháp luật</option>
-            <option value="/rss/giao-duc.rss">Giáo dục</option>
-            <option value="/rss/phap-luat.rss">Pháp luật</option>
-            <option value="/rss/the-thao.rss">Thể thao</option>
-            <option value="/rss/gia-dinh.rss">Đời sống</option>
-            <option value="/rss/du-lich.rss">Du lịch</option>
-            <option value="/rss/khoa-hoc.rss">Khoa học</option>
-            <option value="/rss/so-hoa.rss">Số hóa</option>
-            <option value="/rss/tam-su.rss">Tâm sự</option>
-            <option value="/rss/cuoi.rss">Cười</option>
-      </select>
-        <p id= "submit"><input type="submit"></p>
+        <ul>
+            <li><button name = "rss" value="/rss/thoi-su.rss" type="submit">Thời sự</button></li>
+            <li><button name = "rss" value="/rss/kinh-doanh.rss" type="submit">Kinh doanh</button></li>
+            <li><button name = "rss" value="/rss/giai-tri.rss" type="submit">Giải trí</button></li>
+            <li><button name = "rss" value="/rss/the-thao.rss" type="submit">Thể thao</button></li>
+            <li><button name = "rss" value="/rss/phap-luat.rss" type="submit">Pháp luật</button></li>
+            <li><button name = "rss" value="/rss/giao-duc.rss" type="submit">Giáo dục</button></li>
+            <li><button name = "rss" value="/rss/phap-luat.rss" type="submit">Pháp luật</button></li>
+            <li><button name = "rss" value="/rss/the-thao.rss" type="submit">Thể thao</button></li>
+            <li><button name = "rss" value="/rss/gia-dinh.rss" type="submit">Đời sống</button></li>
+            <li><button name = "rss" value="/rss/du-lich.rss" type="submit">Du lịch</button></li>
+            <li><button name = "rss" value="/rss/khoa-hoc.rss" type="submit">Khoa học</button></li>
+            <li><button name = "rss" value="/rss/so-hoa.rss" type="submit">Số hóa</button></li>
+            <li><button name = "rss" value="/rss/tam-su.rss" type="submit">Tâm sự</button></li>
+            <li><button name = "rss" value="/rss/cuoi.rss" type="submit">Cười</button></li>
+        </ul>
     </form>
 </div>
 </body>
+<footer>
+    <p align = "center">Bạn biết đó. Cuộc sống mà. Khi bạn đi ị thì có ai quan tâm đâu ...</p>
+<p class="copyright" align = "center">Copyright © {{year}} with <i class="fa fa-heart"></i> by Bohemian Guy! Follow him on <a href="https://chomottachcoffee.wordpress.com" target="_blank">Bohemian Guy</a></p>
+</footer>
 </html>
