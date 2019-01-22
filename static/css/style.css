@@ -1,12 +1,12 @@
    h1 {
    margin: 0 auto;
 }
-/*
-ul {
+
+.list-menu {
   columns: 3;
   -webkit-columns: 3;
   -moz-columns: 3;
-}*/
+}
 
 .menu {
     margin: 0 auto;
